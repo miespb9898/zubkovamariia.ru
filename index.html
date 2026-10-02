@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Живопись Mariia Zubkova — цветы, натюрморты и тихие домашние сюжеты маслом и пастелью.">
+<meta property="og:title" content="Mariia Zubkova — живопись">
+<meta property="og:description" content="Картины от которых спокойно на душе.">
+<meta property="og:image" content="images/roses.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='4' fill='%238A9A7E'/%3E%3Cellipse cx='16' cy='7' rx='4.6' ry='6.2' fill='%238A9A7E' opacity='0.85'/%3E%3Cellipse cx='16' cy='7' rx='4.6' ry='6.2' fill='%238A9A7E' opacity='0.85' transform='rotate(72 16 16)'/%3E%3Cellipse cx='16' cy='7' rx='4.6' ry='6.2' fill='%238A9A7E' opacity='0.85' transform='rotate(144 16 16)'/%3E%3Cellipse cx='16' cy='7' rx='4.6' ry='6.2' fill='%238A9A7E' opacity='0.85' transform='rotate(216 16 16)'/%3E%3Cellipse cx='16' cy='7' rx='4.6' ry='6.2' fill='%238A9A7E' opacity='0.85' transform='rotate(288 16 16)'/%3E%3C/svg%3E">
+<title>Mariia Zubkova — тихая галерея</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="nav__mark" id="nav-home">Zubkova Mariia</a>
+  <div class="nav__links">
+    <a href="#vitrina" id="nav-vitrina">все работы</a>
+    <a href="#about-section">о художнице</a>
+    <a href="#contacts-section">связаться</a>
+  </div>
+</nav>
+
+<div class="view is-active" id="view-home">
+
+<!-- ВХОД -->
+<div class="opening" id="top">
+  <div class="opening__scrim"></div>
+  <div class="opening__inner">
+    <p class="opening__name">Zubkova Mariia</p>
+    <p class="opening__tag"></p>
+  </div>
+  <p class="opening__cue">прокрутите вниз ↓</p>
+</div>
+
+<!-- ВТОРОЙ СЛАЙД: цитата на фоне картины с кнопками переключения -->
+<div class="slide2" id="slide2">
+  <div class="slide2__scrim"></div>
+  
+  <button type="button" class="slide2__btn slide2__btn--prev" id="slide2-prev" aria-label="Предыдущая картина">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+
+  <p class="slide2__text">Картины от которых спокойно на душе. Задержитесь у каждой на столько, на сколько захочется.</p>
+
+  <button type="button" class="slide2__btn slide2__btn--next" id="slide2-next" aria-label="Следующая картина">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+</div>
+
+<!-- О ХУДОЖНИЦЕ -->
+<div class="about" id="about-section">
+  <div class="about__photo">
+    <img src="images/artist-portrait.jpeg" alt="Mariia Zubkova">
+  </div>
+  <div class="about__text">
+    <p class="about__lead"></p>
+    <p class="about__body">Я Маша, художница родом из г. Пензы, живущая в <br>Санкт-Петербурге.</p>
+<p class="about__body">Обучалась в ИЗО – студии при гимназии №42 г. Пензы, 
+закончила Пензенский колледж архитектуры и строительства по специальности архитектура, учусь в школе дизайна Bang Bang Education 
+на графический дизайн </p>
+    <p class="about__body">В своей практике я все чаще использую масляную пастель. Она полюбилась мне за текстуру, яркость и возможность работать пальцами, так рисунок остается живым и воздушным.</p>
+    <p class="about__body">В моих работах вы увидите красоту привычных вещей, их цвет и свет. Эти сюжеты тесно связаны с моим детством, со временем, проведённым с семьёй, с ощущением понятного и спокойного мира. Природа в моих работах — символ вечности и опоры: она была до нас, есть и будет после.</p>
+  </div>
+</div>
+
+<a href="#vitrina" class="float-cta" id="float-cta">Посмотреть все работы</a>
+
+<!-- КОНТАКТЫ -->
+<div class="contacts" id="contacts-section">
+  <p class="contacts__lead"></p>
+  <div class="contacts__row">
+    <a class="live" target="_blank" rel="noopener" href="https://t.me/Mariia_Zubkova">написать в Telegram</a>
+    <span class="soon">instagram — скоро</span>
+    <span class="soon">whatsapp — скоро</span>
+  </div>
+</div>
+
+<footer class="footer">© <span id="year"></span> Mariia Zubkova</footer>
+
+</div>
+
+<!-- ВИТРИНА: все работы сразу -->
+<div class="view" id="view-vitrina">
+  <div class="vitrina">
+    <p class="vitrina__intro"></p>
+    <div class="vitrina__tabs" id="vitrina-tabs"></div>
+    <div class="vitrina__grid" id="vitrina-grid"></div>
+  </div>
+</div>
+
+<!-- ЛАЙТБОКС -->
+<div class="overlay" id="overlay">
+  <button class="overlay__close" id="overlay-close" aria-label="Закрыть">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="overlay__stage" id="overlay-stage"></div>
+  <div class="overlay__caption" id="overlay-caption"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
