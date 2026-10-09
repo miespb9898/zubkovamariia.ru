@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&subset=cyrillic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,600&family=Inter:wght@300;400;500&display=swap');
 :root {
   --bg: #F3EFE5;
   --bg-soft: #EAE4D6;
@@ -238,10 +238,12 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 /* FIXED TITLE FONT FOR PERFECT CYRILLIC RENDERING (NO BOLD 'Й' ISSUE) */
 .vitrina__caption .name, .painting-title {
   display: block;
-  font-family: Arial, sans-serif; /* Безопасный шрифт без засечек, где все буквы идеальной толщины */
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400; /* Стандартная мягкая толщина, при которой буква «й» выглядит аккуратно */
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased; /* Включает сглаживание шрифтов на мобильных */
+  text-rendering: optimizeLegibility;
 }
 
 /* Параметры картины */
