@@ -239,10 +239,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 /* FIXED TITLE FONT FOR PERFECT CYRILLIC RENDERING (NO BOLD 'Й' ISSUE) */
 .vitrina__caption .name, .painting-title {
   display: block;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: Arial, sans-serif; /* Безопасный шрифт без засечек, где все буквы идеальной толщины */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 /* Параметры картины */
