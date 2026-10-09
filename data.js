@@ -379,7 +379,7 @@ const PAINTINGS = [
     featured: false,
     image: "images/tsvety-i-travy-9.jpg"
   },
-{
+  {
     id: "svety-i-travy-15",
     title: "Самые вкусные яблоки",
     category: "Цветы и травы",
@@ -390,7 +390,7 @@ const PAINTINGS = [
     featured: false,
     image: "images/tsvety-i-travy-15.jpeg"
   },
-{
+  {
     id: "yablonya",
     title: "Яблоня",
     category: "Цветы и травы",
@@ -412,7 +412,7 @@ const PAINTINGS = [
     featured: false,
     image: "images/beliy-lebed.jpeg"
   },
-{
+  {
     id: "malchik",
     title: "Мальчик",
     category: "Цветы и травы",
@@ -423,7 +423,7 @@ const PAINTINGS = [
     featured: false,
     image: "images/malchik.jpg"
   },
-{
+  {
     id: "osenniy-potseluy",
     title: "Осенний поцелуй",
     category: "Цветы и травы",

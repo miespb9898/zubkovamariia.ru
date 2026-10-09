@@ -29,7 +29,7 @@
     }, 5000);
   }
 
- // Фон второго слайда: ручное переключение кнопками и свайпом
+  // Фон второго слайда: ручное переключение кнопками и свайпом
   var SLIDE2_IMAGES = [
     "images/tsvety-i-travy-5.jpg",
     "images/memy-3.jpg",
@@ -43,7 +43,6 @@
 
     var scrim = slide2.querySelector(".slide2__scrim");
 
-    // Вставляем фоновые слои строго по порядку перед затемнением
     SLIDE2_IMAGES.forEach(function (src, i) {
       var div = document.createElement("div");
       div.className = "slide2__bg" + (i === 0 ? " is-active" : "");
@@ -63,18 +62,16 @@
     var textEl = slide2.querySelector(".slide2__text");
 
     function goTo(index) {
-      // Снимаем активность со всех слоёв и активируем только нужный
       layers.forEach(function (l) { l.classList.remove("is-active"); });
       current = (index + layers.length) % layers.length;
       layers[current].classList.add("is-active");
 
-      // При первой ручной смене картины запускаем таймер на 10 секунд
       if (!hasInteracted) {
         hasInteracted = true;
         if (textEl) {
           setTimeout(function () {
             textEl.classList.add("is-hidden");
-          }, 10000); // 10 секунд
+          }, 10000);
         }
       }
     }
@@ -96,7 +93,6 @@
       });
     }
 
-    // Поддержка жестов свайпа пальцем на смартфонах/планшетах
     var touchStartX = 0;
     var touchEndX = 0;
 
@@ -109,9 +105,9 @@
       var diff = touchEndX - touchStartX;
       if (Math.abs(diff) > 40) {
         if (diff > 0) {
-          goTo(current - 1); // свайп вправо -> предыдущая
+          goTo(current - 1);
         } else {
-          goTo(current + 1); // свайп влево -> следующая
+          goTo(current + 1);
         }
       }
     }, { passive: true });
@@ -179,10 +175,42 @@
     if (cta && name === "vitrina") cta.classList.remove("is-visible");
     window.scrollTo(0, 0);
   }
+
   function handleHash() {
-    showView(location.hash.replace("#", "") === "vitrina" ? "vitrina" : "home");
+    var hash = location.hash.replace("#", "");
+    if (hash === "vitrina") {
+      showView("vitrina");
+    } else {
+      showView("home");
+      // Instant scroll fix for "о художнице" or other sections on first click
+      if (hash === "about-section" || hash === "contacts-section") {
+        setTimeout(function() {
+          var el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    }
   }
   window.addEventListener("hashchange", handleHash);
+
+  // FIX: Make "о художнице" link work instantly from anywhere without double click
+  function initAboutLinkFix() {
+    var aboutLink = document.getElementById("nav-about");
+    if (aboutLink) {
+      aboutLink.addEventListener("click", function (e) {
+        // If we are currently on vitrina, switch to home first, then scroll
+        if (document.getElementById("view-vitrina").classList.contains("is-active")) {
+          showView("home");
+          history.pushState(null, null, "#about-section");
+        }
+        var target = document.getElementById("about-section");
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  }
 
   /* ---------------- Лайтбокс ---------------- */
   var overlay = document.getElementById("overlay");
@@ -241,6 +269,7 @@
     initNavColor();
     initFloatCta();
     renderVitrina();
+    initAboutLinkFix();
     handleHash();
   });
 })();

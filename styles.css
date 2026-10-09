@@ -86,9 +86,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: rgba(251,248,241,.82);
   opacity: 0; animation: fadeUp 2s ease forwards 1s;
 }
+/* PERFECT CENTERING FOR SCROLL CUE */
 .opening__cue {
-  position: absolute; bottom: var(--space-4); left: 47%; transform: translateX(-50%);
-  z-index: 2;
+  position: absolute; bottom: var(--space-4); left: 0; right: 0; margin: 0 auto;
+  z-index: 2; width: max-content;
   font-size: 12px; color: rgba(251,248,241,.75); letter-spacing: .1em;
   opacity: 0; animation: fadeUp 2s ease forwards 2s, bob 3s ease-in-out infinite 3s;
 }
@@ -234,9 +235,17 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .vitrina__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
 .vitrina__card:hover .vitrina__frame img { transform: scale(1.03); }
 .vitrina__caption { margin-top: 10px; text-align: center; }
-.vitrina__caption .name { display: block; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 18px; }
 
-/* Параметры картины: шрифт как в меню, нижний регистр, увеличен на 2px (с 11px до 13px) */
+/* FIXED TITLE FONT FOR PERFECT CYRILLIC RENDERING (NO BOLD 'Й' ISSUE) */
+.vitrina__caption .name, .painting-title {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* Параметры картины */
 .vitrina__caption .specs {
   display: block;
   font-family: var(--sans);
