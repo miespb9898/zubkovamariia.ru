@@ -81,6 +81,8 @@
   <p class="meta-disclaimer" style="font-size: 10px; color: #999; margin-top: 15px;">* Соцсеть компании Meta, признанной экстремистской организацией в РФ</p>
 </div>
 
+</div>
+
 <!-- ВИТРИНА: все работы сразу -->
 <div class="view" id="view-vitrina">
   <div class="vitrina">
@@ -99,8 +101,10 @@
   <div class="overlay__caption" id="overlay-caption"></div>
 </div>
 
+<footer class="footer">© <span id="year"></span> Mariia Zubkova</footer>
+
 <script src="data.js"></script>
 <script src="script.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();</script>
 </body>
 </html>
